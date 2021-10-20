@@ -11,8 +11,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/xccovPretty.sh
+    - name: Pretty Print Code Coverage
       shell: bash
+      run: ${{ github.action_path }}/xccovPretty.sh
       env:
         RESULT_BUNDLE: ${{ inputs.resultBundle }}
         INCLUDED_TARGETS: ${{ inputs.includedTargets }}
